@@ -1,155 +1,0 @@
-Dependencies for Project 'mini2451_led', Target 'Target 1': (DO NOT MODIFY !)
-F (.\min2451_led.s)(0x579FF92D)(--cpu ARM926EJ-S -g -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include --list ".\listing\min2451_led.lst" --xref -o ".\output\min2451_led.o" --depend ".\output\min2451_led.d")
-F (.\main.c)(0x57B83D97)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\main.o" --omf_browse ".\output\main.crf" --depend ".\output\main.d")
-I (app.h)(0x57AADF40)
-I (uart.h)(0x578B6605)
-I (printf.h)(0x578DD367)
-I (types.h)(0x578AF509)
-I (E:\ARM\ARMCC\bin\..\include\string.h)(0x50F96150)
-I (nand.h)(0x5790CB11)
-I (lcd.h)(0x57B054EE)
-I (mmu.h)(0x57811450)
-I (irq.h)(0x57A5D82E)
-I (timer.h)(0x579F1621)
-I (RTC.h)(0x57AA0043)
-I (album.h)(0x57B6824D)
-I (uart_irq.h)(0x57A617C3)
-I (led.h)(0x57AADF50)
-F (.\clock.c)(0x578A6137)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\clock.o" --omf_browse ".\output\clock.crf" --depend ".\output\clock.d")
-F (.\uart.c)(0x578B1ECA)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\uart.o" --omf_browse ".\output\uart.crf" --depend ".\output\uart.d")
-F (.\uart.h)(0x578B6605)()
-F (.\app.h)(0x57AADF40)()
-F (.\printf.c)(0x578DD37F)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\printf.o" --omf_browse ".\output\printf.crf" --depend ".\output\printf.d")
-I (app.h)(0x57AADF40)
-I (uart.h)(0x578B6605)
-I (printf.h)(0x578DD367)
-I (types.h)(0x578AF509)
-I (E:\ARM\ARMCC\bin\..\include\string.h)(0x50F96150)
-I (nand.h)(0x5790CB11)
-I (lcd.h)(0x57B054EE)
-I (mmu.h)(0x57811450)
-I (irq.h)(0x57A5D82E)
-I (timer.h)(0x579F1621)
-I (RTC.h)(0x57AA0043)
-I (album.h)(0x57B6824D)
-I (uart_irq.h)(0x57A617C3)
-I (led.h)(0x57AADF50)
-F (.\types.h)(0x578AF509)()
-F (.\printf.h)(0x578DD367)()
-F (.\my_vsprintf.c)(0x578DCF6D)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\my_vsprintf.o" --omf_browse ".\output\my_vsprintf.crf" --depend ".\output\my_vsprintf.d")
-I (E:\ARM\ARMCC\bin\..\include\ctype.h)(0x50F96150)
-I (app.h)(0x57AADF40)
-I (uart.h)(0x578B6605)
-I (printf.h)(0x578DD367)
-I (types.h)(0x578AF509)
-I (E:\ARM\ARMCC\bin\..\include\string.h)(0x50F96150)
-I (nand.h)(0x5790CB11)
-I (lcd.h)(0x57B054EE)
-I (mmu.h)(0x57811450)
-I (irq.h)(0x57A5D82E)
-I (timer.h)(0x579F1621)
-I (RTC.h)(0x57AA0043)
-I (album.h)(0x57B6824D)
-I (uart_irq.h)(0x57A617C3)
-I (led.h)(0x57AADF50)
-I (E:\ARM\ARMCC\bin\..\include\limits.h)(0x50F9614E)
-F (.\nand.c)(0x5790CABC)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\nand.o" --omf_browse ".\output\nand.crf" --depend ".\output\nand.d")
-I (nand.h)(0x5790CB11)
-F (.\nand.h)(0x5790CB11)()
-F (.\lcd.c)(0x57B7DFE4)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\lcd.o" --omf_browse ".\output\lcd.crf" --depend ".\output\lcd.d")
-I (lcd.h)(0x57B054EE)
-I (E:\ARM\ARMCC\bin\..\include\string.h)(0x50F96150)
-I (irq.h)(0x57A5D82E)
-I (RTC.h)(0x57AA0043)
-I (printf.h)(0x578DD367)
-I (types.h)(0x578AF509)
-F (.\lcd.h)(0x57B054EE)()
-F (.\fanbingbing.c)(0x57931F00)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\fanbingbing.o" --omf_browse ".\output\fanbingbing.crf" --depend ".\output\fanbingbing.d")
-F (.\char.c)(0x57946F03)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\char.o" --omf_browse ".\output\char.crf" --depend ".\output\char.d")
-F (.\irq.c)(0x57B68025)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\irq.o" --omf_browse ".\output\irq.crf" --depend ".\output\irq.d")
-I (app.h)(0x57AADF40)
-I (uart.h)(0x578B6605)
-I (printf.h)(0x578DD367)
-I (types.h)(0x578AF509)
-I (E:\ARM\ARMCC\bin\..\include\string.h)(0x50F96150)
-I (nand.h)(0x5790CB11)
-I (lcd.h)(0x57B054EE)
-I (mmu.h)(0x57811450)
-I (irq.h)(0x57A5D82E)
-I (timer.h)(0x579F1621)
-I (RTC.h)(0x57AA0043)
-I (album.h)(0x57B6824D)
-I (uart_irq.h)(0x57A617C3)
-I (led.h)(0x57AADF50)
-F (.\irq.h)(0x57A5D82E)()
-F (.\2440slib.h)(0x57092706)()
-F (.\2440slib.s)(0x57555588)(--cpu ARM926EJ-S -g -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include --list ".\listing\2440slib.lst" --xref -o ".\output\2440slib.o" --depend ".\output\2440slib.d")
-F (.\mmu.h)(0x57811450)()
-F (.\mmu.c)(0x57820D88)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\mmu.o" --omf_browse ".\output\mmu.crf" --depend ".\output\mmu.d")
-I (mmu.h)(0x57811450)
-I (2440slib.h)(0x57092706)
-I (typedef.h)(0x5709339A)
-F (.\typedef.h)(0x5709339A)()
-F (.\timer.c)(0x579F164E)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\timer.o" --omf_browse ".\output\timer.crf" --depend ".\output\timer.d")
-I (timer.h)(0x579F1621)
-I (irq.h)(0x57A5D82E)
-F (.\timer.h)(0x579F1621)()
-F (.\RTC.c)(0x57B84552)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\rtc.o" --omf_browse ".\output\rtc.crf" --depend ".\output\rtc.d")
-I (app.h)(0x57AADF40)
-I (uart.h)(0x578B6605)
-I (printf.h)(0x578DD367)
-I (types.h)(0x578AF509)
-I (E:\ARM\ARMCC\bin\..\include\string.h)(0x50F96150)
-I (nand.h)(0x5790CB11)
-I (lcd.h)(0x57B054EE)
-I (mmu.h)(0x57811450)
-I (irq.h)(0x57A5D82E)
-I (timer.h)(0x579F1621)
-I (RTC.h)(0x57AA0043)
-I (album.h)(0x57B6824D)
-I (uart_irq.h)(0x57A617C3)
-I (led.h)(0x57AADF50)
-F (.\RTC.h)(0x57AA0043)()
-F (.\gbk.c)(0x5794D525)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\gbk.o" --omf_browse ".\output\gbk.crf" --depend ".\output\gbk.d")
-F (.\tu1.c)(0x57A36E13)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\tu1.o" --omf_browse ".\output\tu1.crf" --depend ".\output\tu1.d")
-F (.\tu2.c)(0x57A36E13)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\tu2.o" --omf_browse ".\output\tu2.crf" --depend ".\output\tu2.d")
-F (.\tu3.c)(0x57A36E13)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\tu3.o" --omf_browse ".\output\tu3.crf" --depend ".\output\tu3.d")
-F (.\tu4.c)(0x57A36E13)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\tu4.o" --omf_browse ".\output\tu4.crf" --depend ".\output\tu4.d")
-F (.\tu5.c)(0x57A36E13)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\tu5.o" --omf_browse ".\output\tu5.crf" --depend ".\output\tu5.d")
-F (.\tu6.c)(0x57A36E13)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\tu6.o" --omf_browse ".\output\tu6.crf" --depend ".\output\tu6.d")
-F (.\tu7.c)(0x57A36E13)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\tu7.o" --omf_browse ".\output\tu7.crf" --depend ".\output\tu7.d")
-F (.\album.c)(0x57B6824D)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\album.o" --omf_browse ".\output\album.crf" --depend ".\output\album.d")
-I (app.h)(0x57AADF40)
-I (uart.h)(0x578B6605)
-I (printf.h)(0x578DD367)
-I (types.h)(0x578AF509)
-I (E:\ARM\ARMCC\bin\..\include\string.h)(0x50F96150)
-I (nand.h)(0x5790CB11)
-I (lcd.h)(0x57B054EE)
-I (mmu.h)(0x57811450)
-I (irq.h)(0x57A5D82E)
-I (timer.h)(0x579F1621)
-I (RTC.h)(0x57AA0043)
-I (album.h)(0x57B6824D)
-I (uart_irq.h)(0x57A617C3)
-I (led.h)(0x57AADF50)
-F (.\album.h)(0x57B6824D)()
-F (.\uart_irq.c)(0x57A617C3)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\uart_irq.o" --omf_browse ".\output\uart_irq.crf" --depend ".\output\uart_irq.d")
-I (app.h)(0x57AADF40)
-I (uart.h)(0x578B6605)
-I (printf.h)(0x578DD367)
-I (types.h)(0x578AF509)
-I (E:\ARM\ARMCC\bin\..\include\string.h)(0x50F96150)
-I (nand.h)(0x5790CB11)
-I (lcd.h)(0x57B054EE)
-I (mmu.h)(0x57811450)
-I (irq.h)(0x57A5D82E)
-I (timer.h)(0x579F1621)
-I (RTC.h)(0x57AA0043)
-I (album.h)(0x57B6824D)
-I (uart_irq.h)(0x57A617C3)
-I (led.h)(0x57AADF50)
-F (.\uart_irq.h)(0x57A617C3)()
-F (.\tu8.c)(0x57A9F5FF)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\tu8.o" --omf_browse ".\output\tu8.crf" --depend ".\output\tu8.d")
-F (.\led.c)(0x57B68025)(-c --cpu ARM926EJ-S -g -O0 --apcs=interwork -I E:\ARM\RV31\INC -I E:\ARM\CMSIS\Include -o ".\output\led.o" --omf_browse ".\output\led.crf" --depend ".\output\led.d")
-F (.\led.h)(0x57AADF50)()
