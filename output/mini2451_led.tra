@@ -1,0 +1,46 @@
+*** Creating Trace Output File '.\output\mini2451_led.tra' Ok.
+### Preparing for ADS-LD.
+### Creating ADS-LD Command Line
+### List of Objects: adding '".\output\min2451_led.o"'
+### List of Objects: adding '".\output\main.o"'
+### List of Objects: adding '".\output\clock.o"'
+### List of Objects: adding '".\output\uart.o"'
+### List of Objects: adding '".\output\printf.o"'
+### List of Objects: adding '".\output\my_vsprintf.o"'
+### List of Objects: adding '".\output\nand.o"'
+### List of Objects: adding '".\output\lcd.o"'
+### List of Objects: adding '".\output\fanbingbing.o"'
+### List of Objects: adding '".\output\char.o"'
+### List of Objects: adding '".\output\irq.o"'
+### List of Objects: adding '".\output\2440slib.o"'
+### List of Objects: adding '".\output\mmu.o"'
+### List of Objects: adding '".\output\timer.o"'
+### List of Objects: adding '".\output\rtc.o"'
+### List of Objects: adding '".\output\gbk.o"'
+### List of Objects: adding '".\output\tu1.o"'
+### List of Objects: adding '".\output\tu2.o"'
+### List of Objects: adding '".\output\tu3.o"'
+### List of Objects: adding '".\output\tu4.o"'
+### List of Objects: adding '".\output\tu5.o"'
+### List of Objects: adding '".\output\tu6.o"'
+### List of Objects: adding '".\output\tu7.o"'
+### List of Objects: adding '".\output\album.o"'
+### List of Objects: adding '".\output\uart_irq.o"'
+### List of Objects: adding '".\output\tu8.o"'
+### List of Objects: adding '".\output\led.o"'
+### ADS-LD Command completed:
+--cpu ARM926EJ-S ".\output\min2451_led.o" ".\output\main.o" ".\output\clock.o" ".\output\uart.o" ".\output\printf.o" ".\output\my_vsprintf.o" ".\output\nand.o" ".\output\lcd.o" ".\output\fanbingbing.o" ".\output\char.o" ".\output\irq.o" ".\output\2440slib.o" ".\output\mmu.o" ".\output\timer.o" ".\output\rtc.o" ".\output\gbk.o" ".\output\tu1.o" ".\output\tu2.o" ".\output\tu3.o" ".\output\tu4.o" ".\output\tu5.o" ".\output\tu6.o" ".\output\tu7.o" ".\output\album.o" ".\output\uart_irq.o" ".\output\tu8.o" ".\output\led.o" 
+--strict --scatter ".\output\Mini2451_Demo.sct" 
+--diag_suppress=L6314w --summary_stderr --info summarysizes --map --xref --callgraph --symbols 
+--info sizes --info totals --info unused --info veneers 
+ --list ".\listing\mini2451_led.map" -o .\output\mini2451_led.axf### Preparing Environment (PrepEnvAds)
+### ADS-LD Output File: '.\output\mini2451_led.axf'
+### ADS-LD Command File: '.\output\mini2451_led.lnp'
+### Checking for dirty Components...
+### Creating CmdFile '.\output\mini2451_led.lnp', Handle=0x00000B34
+### Writing '.lnp' file
+### ADS-LD Command file '.\output\mini2451_led.lnp' is ready.
+### ADS-LD: About to start ADS-LD Thread.
+### ADS-LD: executed with 0 errors
+### Updating obj list
+### LDADS_file() completed.
