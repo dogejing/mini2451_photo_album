@@ -1,0 +1,15 @@
+.\output\rtc.o: RTC.c
+.\output\rtc.o: app.h
+.\output\rtc.o: uart.h
+.\output\rtc.o: printf.h
+.\output\rtc.o: types.h
+.\output\rtc.o: E:\ARM\ARMCC\bin\..\include\string.h
+.\output\rtc.o: nand.h
+.\output\rtc.o: lcd.h
+.\output\rtc.o: mmu.h
+.\output\rtc.o: irq.h
+.\output\rtc.o: timer.h
+.\output\rtc.o: RTC.h
+.\output\rtc.o: album.h
+.\output\rtc.o: uart_irq.h
+.\output\rtc.o: led.h

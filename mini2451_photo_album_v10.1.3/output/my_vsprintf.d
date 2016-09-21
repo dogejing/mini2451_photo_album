@@ -1,0 +1,17 @@
+.\output\my_vsprintf.o: my_vsprintf.c
+.\output\my_vsprintf.o: E:\ARM\ARMCC\bin\..\include\ctype.h
+.\output\my_vsprintf.o: app.h
+.\output\my_vsprintf.o: uart.h
+.\output\my_vsprintf.o: printf.h
+.\output\my_vsprintf.o: types.h
+.\output\my_vsprintf.o: E:\ARM\ARMCC\bin\..\include\string.h
+.\output\my_vsprintf.o: nand.h
+.\output\my_vsprintf.o: lcd.h
+.\output\my_vsprintf.o: mmu.h
+.\output\my_vsprintf.o: irq.h
+.\output\my_vsprintf.o: timer.h
+.\output\my_vsprintf.o: RTC.h
+.\output\my_vsprintf.o: album.h
+.\output\my_vsprintf.o: uart_irq.h
+.\output\my_vsprintf.o: led.h
+.\output\my_vsprintf.o: E:\ARM\ARMCC\bin\..\include\limits.h

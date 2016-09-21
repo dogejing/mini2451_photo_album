@@ -1,0 +1,304 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             Init,CODE,READONLY
+    2 00000000                 PRESERVE8                    ;°ËÎ»×Ö½Ú¶ÔÆë
+    3 00000000         
+    4 00000000                 IMPORT           |Image$$ER_ROM1$$RO$$Limit|
+    5 00000000                 IMPORT           |Image$$RW_RAM1$$RW$$Base| ; Ba
+                                                            se of RAM to initia
+                                                            lise
+    6 00000000                 IMPORT           |Image$$RW_RAM1$$ZI$$Base| ; Ba
+                                                            se and limit of are
+                                                            a
+    7 00000000                 IMPORT           |Image$$RW_RAM1$$ZI$$Limit| ; t
+                                                            o zero initialise
+    8 00000000         
+    9 00000000                 ENTRY
+   10 00000000         
+   11 00000000         start                                ;ÉèÖÃÒì³£ÏòÁ¿
+   12 00000000 EA000012        b                reset
+   13 00000004 EA000022        b                halt
+   14 00000008 EA000021        b                halt
+   15 0000000C EA000020        b                halt
+   16 00000010 EA00001F        b                halt
+   17 00000014 EA00001E        b                halt
+   18 00000018 EA000018        b                _irq
+   19 0000001C EA00001C        b                halt
+   20 00000020         
+   21 00000020 E59F0070        ldr              r0, TopOfROM
+   22 00000024 E59F2070        ldr              r2, BaseOfBSS
+   23 00000028 E59F3070        ldr              r3, BaseOfZero
+   24 0000002C         0
+   25 0000002C E1520003        cmp              r2, r3
+   26 00000030 34901004        ldrcc            r1, [r0], #4
+   27 00000034 34821004        strcc            r1, [r2], #4
+   28 00000038 3AFFFFFB        bcc              %B0
+   29 0000003C         
+   30 0000003C E3A00014        mov              r0, #20
+   31 00000040 E59F305C        ldr              r3, EndOfBSS
+   32 00000044         1
+   33 00000044 E1520003        cmp              r2, r3
+   34 00000048 34820004        strcc            r0, [r2], #4
+   35 0000004C 3AFFFFFC        bcc              %B1
+   36 00000050         
+   37 00000050         reset
+   38 00000050 E3A00453        ldr              r0,=0x53000000 ;¹Ø±Õ¿´ÃÅ¹·
+   39 00000054 E3A01000        ldr              r1,=0x0
+   40 00000058 E5801000        str              r1,[r0]
+   41 0000005C         
+   42 0000005C         ;orr r0,r0,#0x00001000 ;´ò¿ªIcahce
+   43 0000005C         ;mcr p15,0,r0,c1,c0,0
+   44 0000005C         
+   45 0000005C E59FD044        ldr              sp,=(0x32000000+0x100000) 
+                                                            ;ÉèÖÃÕ»Ö¸Õë
+   46 00000060 E3A00053        MOV              r0,#0x53    ;ÉèÖÃ¹¤×÷Ä£Ê½ºÍÖÐ¶Ï
+                                                            ÔÊÐí
+   47 00000064 E12FF000        msr              CPSR_cxsf,r0
+   48 00000068         
+   49 00000068                 IMPORT           clock_init
+   50 00000068 EBFFFFFE        bl               clock_init
+   51 0000006C         
+   52 0000006C                 IMPORT           Main
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+   53 0000006C EBFFFFFE        bl               Main
+   54 00000070         
+   55 00000070                 EXPORT           delay       ;µ¼³ö
+   56 00000070         
+   57 00000070         delay                                ;ÑÓÊ±º¯Êý
+   58 00000070         ;ldr r0,=0x1000000
+   59 00000070         delay_loop
+   60 00000070 E3500000        cmp              r0,#0
+   61 00000074 E2400001        sub              r0,#1
+   62 00000078 1AFFFFFC        bne              delay_loop
+   63 0000007C         
+   64 0000007C E1A0F00E        MOV              pc,lr
+   65 00000080         
+   66 00000080         _irq                                 ;ÖÐ¶Ï´¦Àí³ÌÐò
+   67 00000080 E59FD024        ldr              sp,=(0x33000000+0x100000)
+   68 00000084 E24EE004        sub              lr,lr,#4
+   69 00000088 E92D5FFF        stmdb            sp!,{r0-r12,lr} ;ÈëÕ»£¬±£´æµ±Ç°
+                                                            ³ÌÐòµÄ×´Ì¬
+   70 0000008C                 IMPORT           do_irq      ;ÖÐ¶Ï·þÎñº¯ÊýÎÞ²ÎÊý
+                                                            £¬ÎÞ·µ»ØÖµ
+   71 0000008C EBFFFFFE        bl               do_irq
+   72 00000090 E8FD9FFF        ldmia            sp!,{r0-r12,pc}^ ;½«Ö®¼äÑ¹Õ»µÄÄ
+                                                            ÚÈÝ³öÕ»
+   73 00000094         
+   74 00000094         halt
+   75 00000094 EBFFFFFE        bl               halt
+   76 00000098 00000000 
+                       TopOfROM
+                               DCD              |Image$$ER_ROM1$$RO$$Limit|
+   77 0000009C 00000000 
+                       BaseOfBSS
+                               DCD              |Image$$RW_RAM1$$RW$$Base|
+   78 000000A0 00000000 
+                       BaseOfZero
+                               DCD              |Image$$RW_RAM1$$ZI$$Base|
+   79 000000A4 00000000 
+                       EndOfBSS
+                               DCD              |Image$$RW_RAM1$$ZI$$Limit|
+   80 000000A8         
+   81 000000A8         
+   82 000000A8                 END
+              32100000 
+              33100000 
+Command Line: --debug --xref --cpu=ARM926EJ-S --depend=.\output\min2451_led.d -
+o.\output\min2451_led.o -IE:\ARM\RV31\INC -IE:\ARM\CMSIS\Include --list=.\listi
+ng\min2451_led.lst min2451_led.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+ 0000002C
+
+Symbol: 
+   Definitions
+      None
+   Uses
+      None
+Warning:  undefinedComment:  unused
+ 00000044
+
+Symbol: 
+   Definitions
+      None
+   Uses
+      None
+Warning:  undefinedComment:  unused
+BaseOfBSS 0000009C
+
+Symbol: BaseOfBSS
+   Definitions
+      At line 77 in file min2451_led.s
+   Uses
+      At line 22 in file min2451_led.s
+Comment: BaseOfBSS used once
+BaseOfZero 000000A0
+
+Symbol: BaseOfZero
+   Definitions
+      At line 78 in file min2451_led.s
+   Uses
+      At line 23 in file min2451_led.s
+Comment: BaseOfZero used once
+EndOfBSS 000000A4
+
+Symbol: EndOfBSS
+   Definitions
+      At line 79 in file min2451_led.s
+   Uses
+      At line 31 in file min2451_led.s
+Comment: EndOfBSS used once
+Init 00000000
+
+Symbol: Init
+   Definitions
+      At line 1 in file min2451_led.s
+   Uses
+      None
+Comment: Init unused
+TopOfROM 00000098
+
+Symbol: TopOfROM
+   Definitions
+      At line 76 in file min2451_led.s
+   Uses
+      At line 21 in file min2451_led.s
+Comment: TopOfROM used once
+_irq 00000080
+
+Symbol: _irq
+
+
+
+ARM Macro Assembler    Page 2 Alphabetic symbol ordering
+Relocatable symbols
+
+   Definitions
+      At line 66 in file min2451_led.s
+   Uses
+      At line 18 in file min2451_led.s
+Comment: _irq used once
+delay 00000070
+
+Symbol: delay
+   Definitions
+      At line 57 in file min2451_led.s
+   Uses
+      At line 55 in file min2451_led.s
+Comment: delay used once
+delay_loop 00000070
+
+Symbol: delay_loop
+   Definitions
+      At line 59 in file min2451_led.s
+   Uses
+      At line 62 in file min2451_led.s
+Comment: delay_loop used once
+halt 00000094
+
+Symbol: halt
+   Definitions
+      At line 74 in file min2451_led.s
+   Uses
+      At line 13 in file min2451_led.s
+      At line 14 in file min2451_led.s
+      At line 15 in file min2451_led.s
+      At line 16 in file min2451_led.s
+      At line 17 in file min2451_led.s
+      At line 19 in file min2451_led.s
+      At line 75 in file min2451_led.s
+
+reset 00000050
+
+Symbol: reset
+   Definitions
+      At line 37 in file min2451_led.s
+   Uses
+      At line 12 in file min2451_led.s
+Comment: reset used once
+start 00000000
+
+Symbol: start
+   Definitions
+      At line 11 in file min2451_led.s
+   Uses
+      None
+Comment: start unused
+13 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+Image$$ER_ROM1$$RO$$Limit 00000000
+
+Symbol: Image$$ER_ROM1$$RO$$Limit
+   Definitions
+      At line 4 in file min2451_led.s
+   Uses
+      At line 76 in file min2451_led.s
+Comment: Image$$ER_ROM1$$RO$$Limit used once
+Image$$RW_RAM1$$RW$$Base 00000000
+
+Symbol: Image$$RW_RAM1$$RW$$Base
+   Definitions
+      At line 5 in file min2451_led.s
+   Uses
+      At line 77 in file min2451_led.s
+Comment: Image$$RW_RAM1$$RW$$Base used once
+Image$$RW_RAM1$$ZI$$Base 00000000
+
+Symbol: Image$$RW_RAM1$$ZI$$Base
+   Definitions
+      At line 6 in file min2451_led.s
+   Uses
+      At line 78 in file min2451_led.s
+Comment: Image$$RW_RAM1$$ZI$$Base used once
+Image$$RW_RAM1$$ZI$$Limit 00000000
+
+Symbol: Image$$RW_RAM1$$ZI$$Limit
+   Definitions
+      At line 7 in file min2451_led.s
+   Uses
+      At line 79 in file min2451_led.s
+Comment: Image$$RW_RAM1$$ZI$$Limit used once
+Main 00000000
+
+Symbol: Main
+   Definitions
+      At line 52 in file min2451_led.s
+   Uses
+      At line 53 in file min2451_led.s
+Comment: Main used once
+clock_init 00000000
+
+Symbol: clock_init
+   Definitions
+      At line 49 in file min2451_led.s
+   Uses
+      At line 50 in file min2451_led.s
+Comment: clock_init used once
+do_irq 00000000
+
+Symbol: do_irq
+   Definitions
+      At line 70 in file min2451_led.s
+   Uses
+      At line 71 in file min2451_led.s
+Comment: do_irq used once
+7 symbols
+352 symbols in table
